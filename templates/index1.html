@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <h3 class="LogoGradient-text Mont text-center mb-4">MovieSense: Sentiment Analysis </h3>
+    <div class="container">
+        <!-- Input -->
+        <div class="input-section">
+            <form action="/" method="post" class="review-form" onsubmit="startLoading()">
+                <textarea class="shadow card p-3" id="reviewText" name="text"
+                    placeholder="Write your movie name here." rows="3" required>{{ user_input }}</textarea>
+                <div class="Mont buttons">
+                    <input class="Mont custom-btn btn-4" type="submit" name="Analysis" value="Analysis">
+                    <button class="Mont custom-btn btn-4" type="button"
+                        onclick="clearTextAndHideMessage()">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading animation -->
+    <div id="loading" class="loader"></div>
+
+    <script>
+        function startLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+
+        function clearTextAndHideMessage() {
+            document.getElementById("reviewText").value = "";
+            document.getElementById("predictionSection").style.display = "none";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

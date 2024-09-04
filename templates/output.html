@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles1.css') }}">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="temp">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis Result</h5>
+                            <div class="results-section">
+                                <p class="card-text">Predicted Sentiment: {{ prediction }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3"> 
+                <div class="col-md-6">
+                    <a href="/output" class="btn btn-primary button mt-3">Back to Input</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center mt-5"> 
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/background.jpg') }}" alt="Background Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
